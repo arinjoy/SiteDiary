@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0E3A46822C7C4D2200745074 /* SiteDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3A46812C7C4D2200745074 /* SiteDiaryApp.swift */; };
-		0E3A46842C7C4D2200745074 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3A46832C7C4D2200745074 /* ContentView.swift */; };
 		0E3A46862C7C4D2400745074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3A46852C7C4D2400745074 /* Assets.xcassets */; };
 		0E3A46892C7C4D2400745074 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3A46882C7C4D2400745074 /* Preview Assets.xcassets */; };
+		0EC516AA2C7C50BC00883DD7 /* NewDiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516A92C7C50BC00883DD7 /* NewDiaryEntryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0E3A467E2C7C4D2200745074 /* SiteDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiteDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3A46812C7C4D2200745074 /* SiteDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteDiaryApp.swift; sourceTree = "<group>"; };
-		0E3A46832C7C4D2200745074 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0E3A46852C7C4D2400745074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E3A46882C7C4D2400745074 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0EC516A92C7C50BC00883DD7 /* NewDiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDiaryEntryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +51,9 @@
 		0E3A46802C7C4D2200745074 /* SiteDiary */ = {
 			isa = PBXGroup;
 			children = (
-				0E3A46812C7C4D2200745074 /* SiteDiaryApp.swift */,
-				0E3A46832C7C4D2200745074 /* ContentView.swift */,
+				0EC516A52C7C4FA800883DD7 /* PresentationLayer */,
+				0EC516A72C7C4FF400883DD7 /* DomainLayer */,
+				0EC516A62C7C4FE800883DD7 /* DataLayer */,
 				0E3A46852C7C4D2400745074 /* Assets.xcassets */,
 				0E3A46872C7C4D2400745074 /* Preview Content */,
 			);
@@ -65,6 +66,37 @@
 				0E3A46882C7C4D2400745074 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0EC516A52C7C4FA800883DD7 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				0EC516A82C7C507D00883DD7 /* New Diary */,
+				0E3A46812C7C4D2200745074 /* SiteDiaryApp.swift */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		0EC516A62C7C4FE800883DD7 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		0EC516A72C7C4FF400883DD7 /* DomainLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DomainLayer;
+			sourceTree = "<group>";
+		};
+		0EC516A82C7C507D00883DD7 /* New Diary */ = {
+			isa = PBXGroup;
+			children = (
+				0EC516A92C7C50BC00883DD7 /* NewDiaryEntryView.swift */,
+			);
+			path = "New Diary";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +169,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E3A46842C7C4D2200745074 /* ContentView.swift in Sources */,
 				0E3A46822C7C4D2200745074 /* SiteDiaryApp.swift in Sources */,
+				0EC516AA2C7C50BC00883DD7 /* NewDiaryEntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

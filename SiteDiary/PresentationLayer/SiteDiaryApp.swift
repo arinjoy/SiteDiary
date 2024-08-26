@@ -11,7 +11,7 @@ import SwiftUI
 struct SiteDiaryApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NewDiaryEntryView()
         }
     }
 }
