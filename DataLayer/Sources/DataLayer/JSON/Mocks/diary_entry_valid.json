@@ -1,0 +1,9 @@
+{
+    "images": ["string1", "string2"],
+    "comments": "some comment",
+    "areaName": "some area name",
+    "taskName": "some task name",
+    "tags": ["tag1", "tag2", "tag3"],
+    "existingEventName": "some event",
+    "timestamp": 197282992929
+}
