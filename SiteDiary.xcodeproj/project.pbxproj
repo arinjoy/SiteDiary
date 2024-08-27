@@ -20,9 +20,6 @@
 		0EC516BB2C7D8D0000883DD7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516B82C7D8D0000883DD7 /* NetworkService.swift */; };
 		0EC516BC2C7D8D0000883DD7 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516B92C7D8D0000883DD7 /* Resource.swift */; };
 		0EC516BD2C7D8D0000883DD7 /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516BA2C7D8D0000883DD7 /* NetworkServiceType.swift */; };
-		0EC516C32C7D8DCD00883DD7 /* AnyPublisher+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516C02C7D8DCD00883DD7 /* AnyPublisher+Extensions.swift */; };
-		0EC516C42C7D8DCD00883DD7 /* Scheduler+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516C12C7D8DCD00883DD7 /* Scheduler+Extensions.swift */; };
-		0EC516C52C7D8DCD00883DD7 /* Publisher+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516C22C7D8DCD00883DD7 /* Publisher+Extensions.swift */; };
 		0EC516C72C7D947000883DD7 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516C62C7D947000883DD7 /* APIConstants.swift */; };
 		0EC516C92C7D956700883DD7 /* ServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516C82C7D956700883DD7 /* ServicesProvider.swift */; };
 		0EC516CD2C7D96AC00883DD7 /* DiraryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516CC2C7D96AC00883DD7 /* DiraryEntry.swift */; };
@@ -30,8 +27,8 @@
 		0EC516D12C7D9D9F00883DD7 /* DiaryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516D02C7D9D9F00883DD7 /* DiaryUseCase.swift */; };
 		0EC516D32C7D9DB800883DD7 /* DiaryUseCaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516D22C7D9DB800883DD7 /* DiaryUseCaseType.swift */; };
 		0EC516D62C7DA7F000883DD7 /* DiaryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516D52C7DA7F000883DD7 /* DiaryItem.swift */; };
-		0EC516D82C7DAA2F00883DD7 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516D72C7DAA2F00883DD7 /* String+Extensions.swift */; };
 		0EC516DC2C7DC4C300883DD7 /* NetworkError+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516DB2C7DC4C300883DD7 /* NetworkError+Helper.swift */; };
+		0EC516E62C7DDE0700883DD7 /* SharedUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 0EC516E52C7DDE0700883DD7 /* SharedUtils */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,9 +46,6 @@
 		0EC516B82C7D8D0000883DD7 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0EC516B92C7D8D0000883DD7 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		0EC516BA2C7D8D0000883DD7 /* NetworkServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
-		0EC516C02C7D8DCD00883DD7 /* AnyPublisher+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnyPublisher+Extensions.swift"; sourceTree = "<group>"; };
-		0EC516C12C7D8DCD00883DD7 /* Scheduler+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scheduler+Extensions.swift"; sourceTree = "<group>"; };
-		0EC516C22C7D8DCD00883DD7 /* Publisher+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Publisher+Extensions.swift"; sourceTree = "<group>"; };
 		0EC516C62C7D947000883DD7 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		0EC516C82C7D956700883DD7 /* ServicesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesProvider.swift; sourceTree = "<group>"; };
 		0EC516CC2C7D96AC00883DD7 /* DiraryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiraryEntry.swift; sourceTree = "<group>"; };
@@ -59,8 +53,8 @@
 		0EC516D02C7D9D9F00883DD7 /* DiaryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryUseCase.swift; sourceTree = "<group>"; };
 		0EC516D22C7D9DB800883DD7 /* DiaryUseCaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryUseCaseType.swift; sourceTree = "<group>"; };
 		0EC516D52C7DA7F000883DD7 /* DiaryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryItem.swift; sourceTree = "<group>"; };
-		0EC516D72C7DAA2F00883DD7 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		0EC516DB2C7DC4C300883DD7 /* NetworkError+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkError+Helper.swift"; sourceTree = "<group>"; };
+		0EC516E42C7DDC8D00883DD7 /* SharedUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SharedUtils; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC516E62C7DDE0700883DD7 /* SharedUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,8 +72,10 @@
 		0E3A46752C7C4D2200745074 = {
 			isa = PBXGroup;
 			children = (
+				0EC516E42C7DDC8D00883DD7 /* SharedUtils */,
 				0E3A46802C7C4D2200745074 /* SiteDiary */,
 				0E3A467F2C7C4D2200745074 /* Products */,
+				0EC516DF2C7DDAFA00883DD7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,7 +90,6 @@
 		0E3A46802C7C4D2200745074 /* SiteDiary */ = {
 			isa = PBXGroup;
 			children = (
-				0EC516BE2C7D8D8B00883DD7 /* SharedUtils */,
 				0EC516A52C7C4FA800883DD7 /* PresentationLayer */,
 				0EC516A72C7C4FF400883DD7 /* DomainLayer */,
 				0EC516A62C7C4FE800883DD7 /* DataLayer */,
@@ -165,25 +161,6 @@
 			path = UIComponents;
 			sourceTree = "<group>";
 		};
-		0EC516BE2C7D8D8B00883DD7 /* SharedUtils */ = {
-			isa = PBXGroup;
-			children = (
-				0EC516BF2C7D8DA900883DD7 /* Publisher */,
-				0EC516D72C7DAA2F00883DD7 /* String+Extensions.swift */,
-			);
-			path = SharedUtils;
-			sourceTree = "<group>";
-		};
-		0EC516BF2C7D8DA900883DD7 /* Publisher */ = {
-			isa = PBXGroup;
-			children = (
-				0EC516C02C7D8DCD00883DD7 /* AnyPublisher+Extensions.swift */,
-				0EC516C22C7D8DCD00883DD7 /* Publisher+Extensions.swift */,
-				0EC516C12C7D8DCD00883DD7 /* Scheduler+Extensions.swift */,
-			);
-			path = Publisher;
-			sourceTree = "<group>";
-		};
 		0EC516CA2C7D957100883DD7 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +195,13 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		0EC516DF2C7DDAFA00883DD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -234,6 +218,9 @@
 			dependencies = (
 			);
 			name = SiteDiary;
+			packageProductDependencies = (
+				0EC516E52C7DDE0700883DD7 /* SharedUtils */,
+			);
 			productName = SiteDiary;
 			productReference = 0E3A467E2C7C4D2200745074 /* SiteDiary.app */;
 			productType = "com.apple.product-type.application";
@@ -262,6 +249,9 @@
 				Base,
 			);
 			mainGroup = 0E3A46752C7C4D2200745074;
+			packageReferences = (
+				0EC516E32C7DDC3300883DD7 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+			);
 			productRefGroup = 0E3A467F2C7C4D2200745074 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -294,14 +284,10 @@
 				0EC516B32C7D5C5200883DD7 /* PrimaryButtonStyle.swift in Sources */,
 				0EC516B52C7D618800883DD7 /* NewDiaryEntryViewModel.swift in Sources */,
 				0EC516CD2C7D96AC00883DD7 /* DiraryEntry.swift in Sources */,
-				0EC516C52C7D8DCD00883DD7 /* Publisher+Extensions.swift in Sources */,
 				0E3A46822C7C4D2200745074 /* SiteDiaryApp.swift in Sources */,
 				0EC516BC2C7D8D0000883DD7 /* Resource.swift in Sources */,
 				0EC516B12C7D534E00883DD7 /* CheckboxToggleStyle.swift in Sources */,
 				0EC516D32C7D9DB800883DD7 /* DiaryUseCaseType.swift in Sources */,
-				0EC516C42C7D8DCD00883DD7 /* Scheduler+Extensions.swift in Sources */,
-				0EC516D82C7DAA2F00883DD7 /* String+Extensions.swift in Sources */,
-				0EC516C32C7D8DCD00883DD7 /* AnyPublisher+Extensions.swift in Sources */,
 				0EC516BB2C7D8D0000883DD7 /* NetworkService.swift in Sources */,
 				0EC516AA2C7C50BC00883DD7 /* NewDiaryEntryView.swift in Sources */,
 				0EC516BD2C7D8D0000883DD7 /* NetworkServiceType.swift in Sources */,
@@ -522,6 +508,24 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0EC516E32C7DDC3300883DD7 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.55.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0EC516E52C7DDE0700883DD7 /* SharedUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedUtils;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0E3A46762C7C4D2200745074 /* Project object */;
 }

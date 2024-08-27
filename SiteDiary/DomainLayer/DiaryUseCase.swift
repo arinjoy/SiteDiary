@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import SharedUtils
 
 // TODO: Extract these content of the `DomainLayer` folder as SPM local module
 // Hence many things declared public to access across package boundary
