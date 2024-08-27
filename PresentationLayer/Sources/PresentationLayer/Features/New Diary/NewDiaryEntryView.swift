@@ -68,16 +68,6 @@ struct NewDiaryEntryView: View {
             .navigationBarTitleDisplayMode(.inline)
             .background(Color.gray.opacity(0.3))
         }
-        .alert(isPresented: $isShowingErrorAlert) {
-            errorAlert(from: shownError)
-        }
-//        .alert(isPresented: $isShowingValidationAlert) {
-//            Alert(
-//                title: Text(viewModel.invalidInputErrorTitle),
-//                message: Text(viewModel.invalidInputErrorMessage),
-//                dismissButton: .default(Text("OK"))
-//            )
-//        }
         .onChange(of: selectedPhotoItems) {
             Task {
                 selectedImages.removeAll()
@@ -101,6 +91,16 @@ struct NewDiaryEntryView: View {
             } else if case .invalidInput = state {
                 isShowingValidationAlert = true
             }
+        }
+        .alert(isPresented: $isShowingErrorAlert) {
+            errorAlert(from: shownError)
+        }
+        .alert(isPresented: $isShowingValidationAlert) {
+            Alert(
+                title: Text(viewModel.invalidInputErrorTitle),
+                message: Text(viewModel.invalidInputErrorMessage),
+                dismissButton: .default(Text("OK"))
+            )
         }
     }
 }

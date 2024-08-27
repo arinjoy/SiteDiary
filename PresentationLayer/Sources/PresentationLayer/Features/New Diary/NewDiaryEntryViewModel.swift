@@ -119,7 +119,6 @@ class NewDiaryEntryViewModel: ObservableObject {
                 try await useCase.saveDiaryItem(newItem)
                 state = .success
             } catch {
-                state = .success
                 state = .failure(error as? NetworkError ?? .unknown)
             }
         }
@@ -129,7 +128,7 @@ class NewDiaryEntryViewModel: ObservableObject {
 
 // MARK: - Private helpers
 
-/// Converting `SwitUI.Image` into `UIKit.UIImage` is not straight forward
+/// Converting `SwiftUI.Image` into `UIKit.UIImage` is not straight forward
 /// This below mechanism is one of doing this
 private extension Image {
 
