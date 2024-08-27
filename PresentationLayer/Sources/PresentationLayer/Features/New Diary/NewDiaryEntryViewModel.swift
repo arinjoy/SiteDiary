@@ -1,5 +1,7 @@
 import Foundation
 import SwiftUI
+import Combine
+import SharedUtils
 import DataLayer
 import DomainLayer
 
@@ -19,6 +21,8 @@ class NewDiaryEntryViewModel: ObservableObject {
     // MARK: - Private Dependency
 
     private let useCase: DiaryUseCaseType
+
+    private var cancellables: Set<AnyCancellable> = .init()
 
     // MARK: - Initializer
 
@@ -114,14 +118,21 @@ class NewDiaryEntryViewModel: ObservableObject {
 
         state = .loading
 
-        Task {
-            do {
-                try await useCase.saveDiaryItem(newItem)
+        useCase
+            .saveDiaryItem(newItem)
+            .receive(on: Scheduler.main)
+            // TODO:
+            // Extra delay added for testing and visualisation only.
+            // Should be removed in production code.
+            .delay(for: .seconds(0.5), scheduler: Scheduler.main)
+            .sink { [unowned self] completion in
+                if case .failure(let error) = completion {
+                    state = .failure(error)
+                }
+            } receiveValue: { [unowned self] complete in
                 state = .success
-            } catch {
-                state = .failure(error as? NetworkError ?? .unknown)
             }
-        }
+            .store(in: &cancellables)
     }
 
 }

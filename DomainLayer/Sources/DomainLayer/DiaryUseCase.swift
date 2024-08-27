@@ -3,9 +3,6 @@ import Combine
 import DataLayer
 import SharedUtils
 
-// TODO: Extract these content of the `DomainLayer` folder as SPM local module
-// Hence many things declared public to access across package boundary
-
 final public class DiaryUseCase: DiaryUseCaseType {
 
     // MARK: - Properties
@@ -22,7 +19,7 @@ final public class DiaryUseCase: DiaryUseCaseType {
 
     // MARK: - DiaryUseCaseType
 
-    public func saveDiaryItem(_ item: DiaryItem) async throws {
+    public func saveDiaryItem(_ item: DiaryItem) -> AnyPublisher<Bool, NetworkError> {
 
         // Note: Add any Domain level business logic for data transformation here
         // One example is the comma based string split logic to extract individual tags
@@ -37,13 +34,10 @@ final public class DiaryUseCase: DiaryUseCaseType {
             existingEventName: item.linkedEvent,
             timestamp: Date.now)
 
-        try await networkService
+        return networkService
             .save(Resource<DiaryEntry>.create(entry))
-            // TODO: must be removed in production
-            // This delay is added for testing & visualisation only
-            .delay(for: .seconds(1), scheduler: Scheduler.main)
+            .map { _ in true }
             .eraseToAnyPublisher()
-            .async()
     }
 
 }

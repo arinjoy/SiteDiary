@@ -10,6 +10,7 @@ public final class NetworkServiceSpy: NetworkServiceType {
     public var url: URL?
     public var parameters: [(String, CustomStringConvertible)]?
     public var request: URLRequest?
+    public var dataBody: Encodable?
 
     public func save<T>(_ resource: Resource<T>) -> AnyPublisher<T, NetworkError> {
 
@@ -18,6 +19,7 @@ public final class NetworkServiceSpy: NetworkServiceType {
         url = resource.url
         parameters = resource.parameters
         request = resource.request
+        dataBody = resource.body
 
         return Empty().eraseToAnyPublisher()
     }
