@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 @MainActor
 class NewDiaryEntryViewModel: ObservableObject {
@@ -49,7 +50,9 @@ class NewDiaryEntryViewModel: ObservableObject {
 
     var selectEventTitle: String { "Select an event" }
 
-    var submitButtonTitle: String { "Next" }
+    var saveButtonTitle: String { "Next" }
+
+    var savedToDiaryTitle: String { "Saved to Diary!" }
 
 
     // TODO: These are currently hardcoded elements
@@ -71,15 +74,32 @@ class NewDiaryEntryViewModel: ObservableObject {
 
     // MARK: - API methods
 
-    func saveDiaryEntry() {
+    func saveDiaryItem(
+        from images: [Image],
+        comments: String,
+        area: String,
+        task: String,
+        tagsString: String,
+        linkedEvent: String?
+    ) {
 
-        let newDiaryEntry = DiaryEntry(comments: "Hello", areaName: "some", taskName: "task", tags: ["aa", "bb"], existingEventName: "some", timestamp: Date.now)
+        let newItem = DiaryItem(
+            images: images
+                .map { $0.extractedUIImage()?.base64 }
+                .compactMap { $0 },
+            comments: comments,
+            area: area,
+            task: task,
+            tagsString: tagsString,
+            linkedEvent: linkedEvent
+        )
 
+        // 1. Mark loading state
         state = .loading
 
         Task {
             do {
-                try await useCase.saveDiaryEntry(newDiaryEntry)
+                try await useCase.saveDiaryItem(newItem)
                 state = .success
             } catch {
                 state = .error
@@ -88,3 +108,26 @@ class NewDiaryEntryViewModel: ObservableObject {
     }
 
 }
+
+// MARK: - Private helpers
+
+/// Converting `SwitUI.Image` into `UIKit.UIImage` is not straight forward
+/// This below mechanism is one of doing this
+private extension Image {
+
+    @MainActor
+    func extractedUIImage(newSize: CGSize = .init(width: 300, height: 300)) -> UIImage? {
+        let image = resizable()
+            .scaledToFill()
+            .frame(width: newSize.width, height: newSize.height)
+            .clipped()
+        return ImageRenderer(content: image).uiImage
+    }
+}
+
+private extension UIImage {
+    var base64: String? {
+        self.jpegData(compressionQuality: 1)?.base64EncodedString()
+    }
+}
+

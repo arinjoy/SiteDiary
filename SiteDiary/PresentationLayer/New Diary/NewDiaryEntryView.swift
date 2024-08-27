@@ -246,8 +246,15 @@ private extension NewDiaryEntryView {
     }
 
     var nextButton: some View {
-        Button(viewModel.submitButtonTitle) {
-            viewModel.saveDiaryEntry()
+        Button(viewModel.saveButtonTitle) {
+            viewModel.saveDiaryItem(
+                from: selectedImages,
+                comments: commentsInput,
+                area: selectedAreaInput,
+                task: selectedTaskCategoryInput,
+                tagsString: tagsInput,
+                linkedEvent: linkToExistingEvent ? selectedEventInput : nil
+            )
         }
         .buttonStyle(PrimaryButtonStyle())
     }
@@ -267,16 +274,16 @@ private extension NewDiaryEntryView {
 
     var successHUDView: some View {
         HUDView {
-          Label("Diary Saved!", systemImage: "checkmark.icloud")
+            Label(viewModel.savedToDiaryTitle, systemImage: "checkmark.icloud")
         }
         .zIndex(1)
         .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
         .onAppear {
-          DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            withAnimation {
-              showingSuccessHUD = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                withAnimation {
+                  showingSuccessHUD = false
+                }
             }
-          }
         }
     }
 }

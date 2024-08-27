@@ -29,6 +29,8 @@
 		0EC516CF2C7D98B900883DD7 /* Resource+DiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516CE2C7D98B900883DD7 /* Resource+DiaryEntry.swift */; };
 		0EC516D12C7D9D9F00883DD7 /* DiaryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516D02C7D9D9F00883DD7 /* DiaryUseCase.swift */; };
 		0EC516D32C7D9DB800883DD7 /* DiaryUseCaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516D22C7D9DB800883DD7 /* DiaryUseCaseType.swift */; };
+		0EC516D62C7DA7F000883DD7 /* DiaryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516D52C7DA7F000883DD7 /* DiaryItem.swift */; };
+		0EC516D82C7DAA2F00883DD7 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516D72C7DAA2F00883DD7 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		0EC516CE2C7D98B900883DD7 /* Resource+DiaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+DiaryEntry.swift"; sourceTree = "<group>"; };
 		0EC516D02C7D9D9F00883DD7 /* DiaryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryUseCase.swift; sourceTree = "<group>"; };
 		0EC516D22C7D9DB800883DD7 /* DiaryUseCaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryUseCaseType.swift; sourceTree = "<group>"; };
+		0EC516D52C7DA7F000883DD7 /* DiaryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryItem.swift; sourceTree = "<group>"; };
+		0EC516D72C7DAA2F00883DD7 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,7 @@
 		0EC516A72C7C4FF400883DD7 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
+				0EC516D42C7DA7D900883DD7 /* Models */,
 				0EC516D22C7D9DB800883DD7 /* DiaryUseCaseType.swift */,
 				0EC516D02C7D9D9F00883DD7 /* DiaryUseCase.swift */,
 			);
@@ -160,19 +165,20 @@
 		0EC516BE2C7D8D8B00883DD7 /* SharedUtils */ = {
 			isa = PBXGroup;
 			children = (
-				0EC516BF2C7D8DA900883DD7 /* Extensions */,
+				0EC516BF2C7D8DA900883DD7 /* Publisher */,
+				0EC516D72C7DAA2F00883DD7 /* String+Extensions.swift */,
 			);
 			path = SharedUtils;
 			sourceTree = "<group>";
 		};
-		0EC516BF2C7D8DA900883DD7 /* Extensions */ = {
+		0EC516BF2C7D8DA900883DD7 /* Publisher */ = {
 			isa = PBXGroup;
 			children = (
 				0EC516C02C7D8DCD00883DD7 /* AnyPublisher+Extensions.swift */,
 				0EC516C22C7D8DCD00883DD7 /* Publisher+Extensions.swift */,
 				0EC516C12C7D8DCD00883DD7 /* Scheduler+Extensions.swift */,
 			);
-			path = Extensions;
+			path = Publisher;
 			sourceTree = "<group>";
 		};
 		0EC516CA2C7D957100883DD7 /* NetworkService */ = {
@@ -189,6 +195,14 @@
 			isa = PBXGroup;
 			children = (
 				0EC516CC2C7D96AC00883DD7 /* DiraryEntry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0EC516D42C7DA7D900883DD7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0EC516D52C7DA7F000883DD7 /* DiaryItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EC516CF2C7D98B900883DD7 /* Resource+DiaryEntry.swift in Sources */,
+				0EC516D62C7DA7F000883DD7 /* DiaryItem.swift in Sources */,
 				0EC516C92C7D956700883DD7 /* ServicesProvider.swift in Sources */,
 				0EC516B32C7D5C5200883DD7 /* PrimaryButtonStyle.swift in Sources */,
 				0EC516B52C7D618800883DD7 /* NewDiaryEntryViewModel.swift in Sources */,
@@ -274,6 +289,7 @@
 				0EC516B12C7D534E00883DD7 /* CheckboxToggleStyle.swift in Sources */,
 				0EC516D32C7D9DB800883DD7 /* DiaryUseCaseType.swift in Sources */,
 				0EC516C42C7D8DCD00883DD7 /* Scheduler+Extensions.swift in Sources */,
+				0EC516D82C7DAA2F00883DD7 /* String+Extensions.swift in Sources */,
 				0EC516C32C7D8DCD00883DD7 /* AnyPublisher+Extensions.swift in Sources */,
 				0EC516BB2C7D8D0000883DD7 /* NetworkService.swift in Sources */,
 				0EC516AA2C7C50BC00883DD7 /* NewDiaryEntryView.swift in Sources */,

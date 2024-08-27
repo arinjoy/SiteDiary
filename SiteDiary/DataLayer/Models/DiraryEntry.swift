@@ -2,6 +2,9 @@ import Foundation
 
 public struct DiaryEntry: Codable {
 
+    // Images are encoded as base64 strings
+    public let images: [String]
+
     public let comments: String
     public let areaName: String
     public let taskName: String
