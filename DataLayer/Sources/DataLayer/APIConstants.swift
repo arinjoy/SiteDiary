@@ -10,5 +10,5 @@ struct ApiConstants {
     // TODO: Update this to real endpoint URL
     // Currently we are faking an api call via ReqRes.in
 
-    static let baseUrl = URL(string: "https://reqres.in/api/diary/create")!
+    static let baseUrl = URL(string: "https://reqres.in/api/diary/newEntry")!
 }

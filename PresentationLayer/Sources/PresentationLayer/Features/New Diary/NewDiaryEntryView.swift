@@ -4,7 +4,6 @@ import DataLayer
 
 struct NewDiaryEntryView: View {
 
-
     // MARK: - Properties
 
     @StateObject var viewModel = NewDiaryEntryViewModel()
@@ -27,6 +26,8 @@ struct NewDiaryEntryView: View {
 
     @State private var isShowingErrorAlert = false
     @State private var shownError: NetworkError?
+
+    @State private var isShowingValidationAlert = false
 
     // MARK: - UI Body
 
@@ -70,6 +71,13 @@ struct NewDiaryEntryView: View {
         .alert(isPresented: $isShowingErrorAlert) {
             errorAlert(from: shownError)
         }
+//        .alert(isPresented: $isShowingValidationAlert) {
+//            Alert(
+//                title: Text(viewModel.invalidInputErrorTitle),
+//                message: Text(viewModel.invalidInputErrorMessage),
+//                dismissButton: .default(Text("OK"))
+//            )
+//        }
         .onChange(of: selectedPhotoItems) {
             Task {
                 selectedImages.removeAll()
@@ -90,6 +98,8 @@ struct NewDiaryEntryView: View {
             } else if case .failure(let error) = state {
                 isShowingErrorAlert = true
                 shownError = error
+            } else if case .invalidInput = state {
+                isShowingValidationAlert = true
             }
         }
     }
@@ -219,7 +229,6 @@ private extension NewDiaryEntryView {
                     inputText: $selectedAreaInput)
                 .focused($isEditing)
 
-
                 DropdownTextField(
                     title: viewModel.taskCategoryTitle,
                     dropdownInputs: viewModel.listOfTaskCategory,
@@ -335,10 +344,10 @@ private extension NewDiaryEntryView {
 
     func clearErrorAlert() {
         isShowingErrorAlert = false
+        isShowingValidationAlert = false
         shownError = nil
     }
 }
-
 
 #Preview {
     NewDiaryEntryView()

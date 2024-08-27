@@ -30,8 +30,10 @@ public struct Resource<T: Codable> {
             return nil
         }
 
-        components.queryItems = parameters.map { (key, value) in
-            URLQueryItem(name: key, value: value.description)
+        if parameters.count > 0 {
+            components.queryItems = parameters.map { (key, value) in
+                URLQueryItem(name: key, value: value.description)
+            }
         }
 
         guard let url = components.url else {

@@ -8,6 +8,7 @@ class NewDiaryEntryViewModel: ObservableObject {
 
     enum ViewState: Equatable {
         case idle
+        case invalidInput
         case loading
         case success
         case failure(NetworkError)
@@ -54,6 +55,11 @@ class NewDiaryEntryViewModel: ObservableObject {
 
     var savedToDiaryTitle: String { "Saved to Diary!" }
 
+    var invalidInputErrorTitle: String { "Invalid Input!" }
+
+    var invalidInputErrorMessage: String {
+        "Please add at least one photo, enter comments, area and task information to save to diary."
+    }
 
     // TODO: These are currently hardcoded elements
     // Ideally they need to passed in or sourced from other module based on the business logic
@@ -71,7 +77,6 @@ class NewDiaryEntryViewModel: ObservableObject {
                                    "Event 2",
                                    "Event 3"]
 
-
     // MARK: - API methods
 
     func saveDiaryItem(
@@ -82,6 +87,19 @@ class NewDiaryEntryViewModel: ObservableObject {
         tagsString: String,
         linkedEvent: String?
     ) {
+
+        // Note: Modify these logic as per..
+        // business requirements of form input validation.
+        // Currently, some simple check applied.
+        guard
+            images.count > 0,
+            comments.isEmpty == false,
+            area.isEmpty == false,
+            task.isEmpty == false
+        else {
+            state = .invalidInput
+            return
+        }
 
         let newItem = DiaryItem(
             images: images
@@ -101,6 +119,7 @@ class NewDiaryEntryViewModel: ObservableObject {
                 try await useCase.saveDiaryItem(newItem)
                 state = .success
             } catch {
+                state = .success
                 state = .failure(error as? NetworkError ?? .unknown)
             }
         }
