@@ -122,7 +122,6 @@ private extension NetworkService {
     }
 }
 
-
 extension NetworkError: Equatable {
 
     // swiftlint:disable:next cyclomatic_complexity

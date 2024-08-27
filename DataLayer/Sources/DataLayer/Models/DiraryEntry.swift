@@ -12,7 +12,15 @@ public struct DiaryEntry: Codable {
     public let existingEventName: String?
     public let timestamp: Date
 
-    public init(images: [String], comments: String, areaName: String, taskName: String, tags: [String], existingEventName: String?, timestamp: Date) {
+    public init(
+        images: [String],
+        comments: String,
+        areaName: String,
+        taskName: String,
+        tags: [String],
+        existingEventName: String?,
+        timestamp: Date
+    ) {
         self.images = images
         self.comments = comments
         self.areaName = areaName

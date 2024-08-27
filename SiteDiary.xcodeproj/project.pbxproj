@@ -17,12 +17,10 @@
 		0EC516B32C7D5C5200883DD7 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516B22C7D5C5200883DD7 /* PrimaryButtonStyle.swift */; };
 		0EC516B52C7D618800883DD7 /* NewDiaryEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516B42C7D618800883DD7 /* NewDiaryEntryViewModel.swift */; };
 		0EC516B72C7D796100883DD7 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516B62C7D796100883DD7 /* HUDView.swift */; };
-		0EC516D12C7D9D9F00883DD7 /* DiaryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516D02C7D9D9F00883DD7 /* DiaryUseCase.swift */; };
-		0EC516D32C7D9DB800883DD7 /* DiaryUseCaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516D22C7D9DB800883DD7 /* DiaryUseCaseType.swift */; };
-		0EC516D62C7DA7F000883DD7 /* DiaryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516D52C7DA7F000883DD7 /* DiaryItem.swift */; };
 		0EC516DC2C7DC4C300883DD7 /* NetworkError+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516DB2C7DC4C300883DD7 /* NetworkError+Helper.swift */; };
 		0EC516E62C7DDE0700883DD7 /* SharedUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 0EC516E52C7DDE0700883DD7 /* SharedUtils */; };
 		0EC516E92C7DDFF200883DD7 /* DataLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 0EC516E82C7DDFF200883DD7 /* DataLayer */; };
+		0EC516EC2C7DE91300883DD7 /* DomainLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 0EC516EB2C7DE91300883DD7 /* DomainLayer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,12 +35,10 @@
 		0EC516B22C7D5C5200883DD7 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		0EC516B42C7D618800883DD7 /* NewDiaryEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDiaryEntryViewModel.swift; sourceTree = "<group>"; };
 		0EC516B62C7D796100883DD7 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
-		0EC516D02C7D9D9F00883DD7 /* DiaryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryUseCase.swift; sourceTree = "<group>"; };
-		0EC516D22C7D9DB800883DD7 /* DiaryUseCaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryUseCaseType.swift; sourceTree = "<group>"; };
-		0EC516D52C7DA7F000883DD7 /* DiaryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryItem.swift; sourceTree = "<group>"; };
 		0EC516DB2C7DC4C300883DD7 /* NetworkError+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkError+Helper.swift"; sourceTree = "<group>"; };
 		0EC516E42C7DDC8D00883DD7 /* SharedUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SharedUtils; sourceTree = "<group>"; };
 		0EC516E72C7DDF7400883DD7 /* DataLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DataLayer; sourceTree = "<group>"; };
+		0EC516EA2C7DE81600883DD7 /* DomainLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DomainLayer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +48,7 @@
 			files = (
 				0EC516E92C7DDFF200883DD7 /* DataLayer in Frameworks */,
 				0EC516E62C7DDE0700883DD7 /* SharedUtils in Frameworks */,
+				0EC516EC2C7DE91300883DD7 /* DomainLayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +58,7 @@
 		0E3A46752C7C4D2200745074 = {
 			isa = PBXGroup;
 			children = (
+				0EC516EA2C7DE81600883DD7 /* DomainLayer */,
 				0EC516E72C7DDF7400883DD7 /* DataLayer */,
 				0EC516E42C7DDC8D00883DD7 /* SharedUtils */,
 				0E3A46802C7C4D2200745074 /* SiteDiary */,
@@ -81,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				0EC516A52C7C4FA800883DD7 /* PresentationLayer */,
-				0EC516A72C7C4FF400883DD7 /* DomainLayer */,
 				0E3A46852C7C4D2400745074 /* Assets.xcassets */,
 				0E3A46872C7C4D2400745074 /* Preview Content */,
 			);
@@ -107,16 +104,6 @@
 			path = PresentationLayer;
 			sourceTree = "<group>";
 		};
-		0EC516A72C7C4FF400883DD7 /* DomainLayer */ = {
-			isa = PBXGroup;
-			children = (
-				0EC516D42C7DA7D900883DD7 /* Models */,
-				0EC516D22C7D9DB800883DD7 /* DiaryUseCaseType.swift */,
-				0EC516D02C7D9D9F00883DD7 /* DiaryUseCase.swift */,
-			);
-			path = DomainLayer;
-			sourceTree = "<group>";
-		};
 		0EC516A82C7C507D00883DD7 /* New Diary */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,14 +123,6 @@
 				0EC516B62C7D796100883DD7 /* HUDView.swift */,
 			);
 			path = UIComponents;
-			sourceTree = "<group>";
-		};
-		0EC516D42C7DA7D900883DD7 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				0EC516D52C7DA7F000883DD7 /* DiaryItem.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		0EC516DD2C7DC83300883DD7 /* Helpers */ = {
@@ -180,6 +159,7 @@
 			packageProductDependencies = (
 				0EC516E52C7DDE0700883DD7 /* SharedUtils */,
 				0EC516E82C7DDFF200883DD7 /* DataLayer */,
+				0EC516EB2C7DE91300883DD7 /* DomainLayer */,
 			);
 			productName = SiteDiary;
 			productReference = 0E3A467E2C7C4D2200745074 /* SiteDiary.app */;
@@ -238,17 +218,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EC516D62C7DA7F000883DD7 /* DiaryItem.swift in Sources */,
 				0EC516B32C7D5C5200883DD7 /* PrimaryButtonStyle.swift in Sources */,
 				0EC516B52C7D618800883DD7 /* NewDiaryEntryViewModel.swift in Sources */,
 				0E3A46822C7C4D2200745074 /* SiteDiaryApp.swift in Sources */,
 				0EC516B12C7D534E00883DD7 /* CheckboxToggleStyle.swift in Sources */,
-				0EC516D32C7D9DB800883DD7 /* DiaryUseCaseType.swift in Sources */,
 				0EC516AA2C7C50BC00883DD7 /* NewDiaryEntryView.swift in Sources */,
 				0EC516DC2C7DC4C300883DD7 /* NetworkError+Helper.swift in Sources */,
 				0EC516B72C7D796100883DD7 /* HUDView.swift in Sources */,
 				0EC516AF2C7D434600883DD7 /* View+Extensions.swift in Sources */,
-				0EC516D12C7D9D9F00883DD7 /* DiaryUseCase.swift in Sources */,
 				0EC516AD2C7C775500883DD7 /* DropdownTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +458,10 @@
 		0EC516E82C7DDFF200883DD7 /* DataLayer */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DataLayer;
+		};
+		0EC516EB2C7DE91300883DD7 /* DomainLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DomainLayer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,11 +1,10 @@
 import Foundation
 import SwiftUI
 import DataLayer
+import DomainLayer
 
 @MainActor
 class NewDiaryEntryViewModel: ObservableObject {
-
-    // MARK: - Types
 
     enum ViewState: Equatable {
         case idle
