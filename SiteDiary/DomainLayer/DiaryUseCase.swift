@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import DataLayer
 import SharedUtils
 
 // TODO: Extract these content of the `DomainLayer` folder as SPM local module

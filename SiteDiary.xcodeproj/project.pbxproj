@@ -17,18 +17,12 @@
 		0EC516B32C7D5C5200883DD7 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516B22C7D5C5200883DD7 /* PrimaryButtonStyle.swift */; };
 		0EC516B52C7D618800883DD7 /* NewDiaryEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516B42C7D618800883DD7 /* NewDiaryEntryViewModel.swift */; };
 		0EC516B72C7D796100883DD7 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516B62C7D796100883DD7 /* HUDView.swift */; };
-		0EC516BB2C7D8D0000883DD7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516B82C7D8D0000883DD7 /* NetworkService.swift */; };
-		0EC516BC2C7D8D0000883DD7 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516B92C7D8D0000883DD7 /* Resource.swift */; };
-		0EC516BD2C7D8D0000883DD7 /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516BA2C7D8D0000883DD7 /* NetworkServiceType.swift */; };
-		0EC516C72C7D947000883DD7 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516C62C7D947000883DD7 /* APIConstants.swift */; };
-		0EC516C92C7D956700883DD7 /* ServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516C82C7D956700883DD7 /* ServicesProvider.swift */; };
-		0EC516CD2C7D96AC00883DD7 /* DiraryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516CC2C7D96AC00883DD7 /* DiraryEntry.swift */; };
-		0EC516CF2C7D98B900883DD7 /* Resource+DiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516CE2C7D98B900883DD7 /* Resource+DiaryEntry.swift */; };
 		0EC516D12C7D9D9F00883DD7 /* DiaryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516D02C7D9D9F00883DD7 /* DiaryUseCase.swift */; };
 		0EC516D32C7D9DB800883DD7 /* DiaryUseCaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516D22C7D9DB800883DD7 /* DiaryUseCaseType.swift */; };
 		0EC516D62C7DA7F000883DD7 /* DiaryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516D52C7DA7F000883DD7 /* DiaryItem.swift */; };
 		0EC516DC2C7DC4C300883DD7 /* NetworkError+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516DB2C7DC4C300883DD7 /* NetworkError+Helper.swift */; };
 		0EC516E62C7DDE0700883DD7 /* SharedUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 0EC516E52C7DDE0700883DD7 /* SharedUtils */; };
+		0EC516E92C7DDFF200883DD7 /* DataLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 0EC516E82C7DDFF200883DD7 /* DataLayer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,18 +37,12 @@
 		0EC516B22C7D5C5200883DD7 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		0EC516B42C7D618800883DD7 /* NewDiaryEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDiaryEntryViewModel.swift; sourceTree = "<group>"; };
 		0EC516B62C7D796100883DD7 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
-		0EC516B82C7D8D0000883DD7 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		0EC516B92C7D8D0000883DD7 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
-		0EC516BA2C7D8D0000883DD7 /* NetworkServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
-		0EC516C62C7D947000883DD7 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
-		0EC516C82C7D956700883DD7 /* ServicesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesProvider.swift; sourceTree = "<group>"; };
-		0EC516CC2C7D96AC00883DD7 /* DiraryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiraryEntry.swift; sourceTree = "<group>"; };
-		0EC516CE2C7D98B900883DD7 /* Resource+DiaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+DiaryEntry.swift"; sourceTree = "<group>"; };
 		0EC516D02C7D9D9F00883DD7 /* DiaryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryUseCase.swift; sourceTree = "<group>"; };
 		0EC516D22C7D9DB800883DD7 /* DiaryUseCaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryUseCaseType.swift; sourceTree = "<group>"; };
 		0EC516D52C7DA7F000883DD7 /* DiaryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryItem.swift; sourceTree = "<group>"; };
 		0EC516DB2C7DC4C300883DD7 /* NetworkError+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkError+Helper.swift"; sourceTree = "<group>"; };
 		0EC516E42C7DDC8D00883DD7 /* SharedUtils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SharedUtils; sourceTree = "<group>"; };
+		0EC516E72C7DDF7400883DD7 /* DataLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DataLayer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC516E92C7DDFF200883DD7 /* DataLayer in Frameworks */,
 				0EC516E62C7DDE0700883DD7 /* SharedUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +61,7 @@
 		0E3A46752C7C4D2200745074 = {
 			isa = PBXGroup;
 			children = (
+				0EC516E72C7DDF7400883DD7 /* DataLayer */,
 				0EC516E42C7DDC8D00883DD7 /* SharedUtils */,
 				0E3A46802C7C4D2200745074 /* SiteDiary */,
 				0E3A467F2C7C4D2200745074 /* Products */,
@@ -92,7 +82,6 @@
 			children = (
 				0EC516A52C7C4FA800883DD7 /* PresentationLayer */,
 				0EC516A72C7C4FF400883DD7 /* DomainLayer */,
-				0EC516A62C7C4FE800883DD7 /* DataLayer */,
 				0E3A46852C7C4D2400745074 /* Assets.xcassets */,
 				0E3A46872C7C4D2400745074 /* Preview Content */,
 			);
@@ -116,18 +105,6 @@
 				0E3A46812C7C4D2200745074 /* SiteDiaryApp.swift */,
 			);
 			path = PresentationLayer;
-			sourceTree = "<group>";
-		};
-		0EC516A62C7C4FE800883DD7 /* DataLayer */ = {
-			isa = PBXGroup;
-			children = (
-				0EC516CB2C7D95E200883DD7 /* Models */,
-				0EC516CA2C7D957100883DD7 /* NetworkService */,
-				0EC516C82C7D956700883DD7 /* ServicesProvider.swift */,
-				0EC516C62C7D947000883DD7 /* APIConstants.swift */,
-				0EC516CE2C7D98B900883DD7 /* Resource+DiaryEntry.swift */,
-			);
-			path = DataLayer;
 			sourceTree = "<group>";
 		};
 		0EC516A72C7C4FF400883DD7 /* DomainLayer */ = {
@@ -159,24 +136,6 @@
 				0EC516B62C7D796100883DD7 /* HUDView.swift */,
 			);
 			path = UIComponents;
-			sourceTree = "<group>";
-		};
-		0EC516CA2C7D957100883DD7 /* NetworkService */ = {
-			isa = PBXGroup;
-			children = (
-				0EC516B92C7D8D0000883DD7 /* Resource.swift */,
-				0EC516B82C7D8D0000883DD7 /* NetworkService.swift */,
-				0EC516BA2C7D8D0000883DD7 /* NetworkServiceType.swift */,
-			);
-			path = NetworkService;
-			sourceTree = "<group>";
-		};
-		0EC516CB2C7D95E200883DD7 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				0EC516CC2C7D96AC00883DD7 /* DiraryEntry.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		0EC516D42C7DA7D900883DD7 /* Models */ = {
@@ -220,6 +179,7 @@
 			name = SiteDiary;
 			packageProductDependencies = (
 				0EC516E52C7DDE0700883DD7 /* SharedUtils */,
+				0EC516E82C7DDFF200883DD7 /* DataLayer */,
 			);
 			productName = SiteDiary;
 			productReference = 0E3A467E2C7C4D2200745074 /* SiteDiary.app */;
@@ -278,21 +238,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EC516CF2C7D98B900883DD7 /* Resource+DiaryEntry.swift in Sources */,
 				0EC516D62C7DA7F000883DD7 /* DiaryItem.swift in Sources */,
-				0EC516C92C7D956700883DD7 /* ServicesProvider.swift in Sources */,
 				0EC516B32C7D5C5200883DD7 /* PrimaryButtonStyle.swift in Sources */,
 				0EC516B52C7D618800883DD7 /* NewDiaryEntryViewModel.swift in Sources */,
-				0EC516CD2C7D96AC00883DD7 /* DiraryEntry.swift in Sources */,
 				0E3A46822C7C4D2200745074 /* SiteDiaryApp.swift in Sources */,
-				0EC516BC2C7D8D0000883DD7 /* Resource.swift in Sources */,
 				0EC516B12C7D534E00883DD7 /* CheckboxToggleStyle.swift in Sources */,
 				0EC516D32C7D9DB800883DD7 /* DiaryUseCaseType.swift in Sources */,
-				0EC516BB2C7D8D0000883DD7 /* NetworkService.swift in Sources */,
 				0EC516AA2C7C50BC00883DD7 /* NewDiaryEntryView.swift in Sources */,
-				0EC516BD2C7D8D0000883DD7 /* NetworkServiceType.swift in Sources */,
 				0EC516DC2C7DC4C300883DD7 /* NetworkError+Helper.swift in Sources */,
-				0EC516C72C7D947000883DD7 /* APIConstants.swift in Sources */,
 				0EC516B72C7D796100883DD7 /* HUDView.swift in Sources */,
 				0EC516AF2C7D434600883DD7 /* View+Extensions.swift in Sources */,
 				0EC516D12C7D9D9F00883DD7 /* DiaryUseCase.swift in Sources */,
@@ -524,6 +477,10 @@
 		0EC516E52C7DDE0700883DD7 /* SharedUtils */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SharedUtils;
+		};
+		0EC516E82C7DDFF200883DD7 /* DataLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataLayer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

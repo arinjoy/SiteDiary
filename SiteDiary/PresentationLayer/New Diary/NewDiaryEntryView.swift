@@ -1,12 +1,6 @@
-//
-//  NewDiaryEntryView.swift
-//  SiteDiary
-//
-//  Created by Arinjoy Biswas on 26/8/2024.
-//
-
 import SwiftUI
 import PhotosUI
+import DataLayer
 
 struct NewDiaryEntryView: View {
 

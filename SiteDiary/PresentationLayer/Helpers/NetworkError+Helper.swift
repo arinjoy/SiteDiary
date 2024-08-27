@@ -1,3 +1,5 @@
+import DataLayer
+
 extension NetworkError {
 
     // NOTE: Map more custom error messages if needed
