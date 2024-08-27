@@ -2,9 +2,6 @@ import Foundation
 import Combine
 import SharedUtils
 
-// TODO: Extract these content of the `DataLayer` folder as SPM local module
-// Hence many things declared public to access across package boundary
-
 final public class NetworkService: NetworkServiceType {
 
     private let session: URLSession
@@ -24,6 +21,7 @@ final public class NetworkService: NetworkServiceType {
         guard let data = try? JSONEncoder().encode(resource.body) else {
             return .fail(NetworkError.jsonEncodingError)
         }
+        request.httpMethod = "POST"
         request.httpBody = data
 
         return URLSession.shared.dataTaskPublisher(for: request)
