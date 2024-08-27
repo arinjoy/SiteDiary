@@ -13,6 +13,8 @@
 		0EC516AA2C7C50BC00883DD7 /* NewDiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516A92C7C50BC00883DD7 /* NewDiaryEntryView.swift */; };
 		0EC516AD2C7C775500883DD7 /* DropdownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516AC2C7C775500883DD7 /* DropdownTextField.swift */; };
 		0EC516AF2C7D434600883DD7 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516AE2C7D434600883DD7 /* View+Extensions.swift */; };
+		0EC516B12C7D534E00883DD7 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516B02C7D534E00883DD7 /* CheckboxToggleStyle.swift */; };
+		0EC516B32C7D5C5200883DD7 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516B22C7D5C5200883DD7 /* PrimaryButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		0EC516A92C7C50BC00883DD7 /* NewDiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDiaryEntryView.swift; sourceTree = "<group>"; };
 		0EC516AC2C7C775500883DD7 /* DropdownTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownTextField.swift; sourceTree = "<group>"; };
 		0EC516AE2C7D434600883DD7 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		0EC516B02C7D534E00883DD7 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
+		0EC516B22C7D5C5200883DD7 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 			children = (
 				0EC516AC2C7C775500883DD7 /* DropdownTextField.swift */,
 				0EC516AE2C7D434600883DD7 /* View+Extensions.swift */,
+				0EC516B02C7D534E00883DD7 /* CheckboxToggleStyle.swift */,
+				0EC516B22C7D5C5200883DD7 /* PrimaryButtonStyle.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -183,7 +189,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC516B32C7D5C5200883DD7 /* PrimaryButtonStyle.swift in Sources */,
 				0E3A46822C7C4D2200745074 /* SiteDiaryApp.swift in Sources */,
+				0EC516B12C7D534E00883DD7 /* CheckboxToggleStyle.swift in Sources */,
 				0EC516AA2C7C50BC00883DD7 /* NewDiaryEntryView.swift in Sources */,
 				0EC516AF2C7D434600883DD7 /* View+Extensions.swift in Sources */,
 				0EC516AD2C7C775500883DD7 /* DropdownTextField.swift in Sources */,

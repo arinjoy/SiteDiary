@@ -22,10 +22,14 @@ struct NewDiaryEntryView: View {
     var listOfTaskCategory: [String]  = ["Task A", "Task B", "Task C"]
     @State var selectedTaskCategory = ""
 
+    @State var linkToExistingEvent = false
+    var listOfEvents: [String]  = ["Event 1", "Event 2", "Event 3"]
+    @State var selectedEvent = ""
+
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 20) {
 
                     mainHeader
 
@@ -34,9 +38,15 @@ struct NewDiaryEntryView: View {
                     commentsSection
 
                     detailsSection
+
+                    linkToEventSection
+
+                    nextButton
+
+                    Spacer()
                 }
+                .padding(16)
             }
-            .padding(16)
             .toolbar { navBarContent }
             .toolbarBackground(Color.black, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
@@ -142,14 +152,7 @@ private extension NewDiaryEntryView {
                     preferredItemEncoding: .compatible
                 ) {
                     Text("Add a photo")
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .font(.body)
-                        .fontWeight(.bold)
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(.green)
-                        .cornerRadius(8)
-                        .shadow(radius: 6)
+                        .primaryButtonStyle()
                 }
             }
         }
@@ -194,6 +197,33 @@ private extension NewDiaryEntryView {
         }
     }
 
+    var linkToEventSection: some View {
+        GroupBox {
+            VStack(alignment: .leading, spacing: 20) {
+                Toggle(isOn: $linkToExistingEvent) {
+                    groupHeader(title: "Link to existing event?")
+                        .tint(.primary)
+                }
+                .toggleStyle(CheckboxToggleStyle())
+
+                if linkToExistingEvent {
+                    DropdownTextField(
+                        title: "Select an event",
+                        dropdownInputs: listOfEvents,
+                        inputText: $selectedEvent)
+                }
+            }
+        }
+    }
+
+    var nextButton: some View {
+        Button("Next") {
+            // TODO: viewModel.submit()
+            print("Next pressed!")
+        }
+        .buttonStyle(PrimaryButtonStyle())
+
+    }
 }
 
 // MARK: - Private Helpers
