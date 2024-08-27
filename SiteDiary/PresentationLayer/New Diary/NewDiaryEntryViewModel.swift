@@ -34,6 +34,8 @@ class NewDiaryEntryViewModel: ObservableObject {
 
     var selectEventTitle: String { "Select an event" }
 
+    var submitButtonTitle: String { "Next" }
+
 
     // TODO: These are currently hardcoded elements
     // Ideally they need to passed in or sourced from other module based on the business logic

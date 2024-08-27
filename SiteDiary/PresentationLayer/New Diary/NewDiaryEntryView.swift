@@ -32,24 +32,31 @@ struct NewDiaryEntryView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
 
-                    mainHeader
+            ZStack {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 20) {
 
-                    photosSection
+                        mainHeader
 
-                    commentsSection
+                        photosSection
 
-                    detailsSection
+                        commentsSection
 
-                    linkToEventSection
+                        detailsSection
 
-                    nextButton
+                        linkToEventSection
 
-                    Spacer()
+                        nextButton
+
+                        Spacer()
+                    }
+                    .padding(16)
                 }
-                .padding(16)
+
+                if viewModel.state == .loading {
+                    fullScreenProgressView
+                }
             }
             .toolbar { navBarContent }
             .toolbarBackground(Color.black, for: .navigationBar)
@@ -66,6 +73,11 @@ struct NewDiaryEntryView: View {
                         selectedImages.append(image)
                     }
                 }
+            }
+        }
+        .onChange(of: viewModel.state) { _, state in
+            if state == .success {
+                clearFormInputs()
             }
         }
     }
@@ -226,11 +238,23 @@ private extension NewDiaryEntryView {
     }
 
     var nextButton: some View {
-        Button("Next") {
-            // TODO: viewModel.submit()
-            print("Next pressed!")
+        Button(viewModel.submitButtonTitle) {
+            viewModel.saveDiaryEntry()
         }
         .buttonStyle(PrimaryButtonStyle())
+    }
+
+    var fullScreenProgressView: some View {
+        ProgressView()
+            .progressViewStyle(CircularProgressViewStyle(tint: .black))
+            .scaleEffect(2)
+            .frame(
+                maxWidth: .infinity,
+                maxHeight: .infinity,
+                alignment: .center
+            )
+            .ignoresSafeArea()
+            .background(Color.gray.opacity(0.5))
     }
 }
 
