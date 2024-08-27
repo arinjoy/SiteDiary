@@ -4,6 +4,7 @@ import DataLayer
 
 struct NewDiaryEntryView: View {
 
+
     // MARK: - Properties
 
     @StateObject var viewModel = NewDiaryEntryViewModel()
@@ -29,7 +30,7 @@ struct NewDiaryEntryView: View {
 
     // MARK: - UI Body
 
-    var body: some View {
+    public var body: some View {
         NavigationStack {
             ZStack {
                 ScrollView {
