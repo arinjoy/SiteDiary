@@ -11,6 +11,8 @@
 		0E3A46862C7C4D2400745074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3A46852C7C4D2400745074 /* Assets.xcassets */; };
 		0E3A46892C7C4D2400745074 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3A46882C7C4D2400745074 /* Preview Assets.xcassets */; };
 		0EC516AA2C7C50BC00883DD7 /* NewDiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516A92C7C50BC00883DD7 /* NewDiaryEntryView.swift */; };
+		0EC516AD2C7C775500883DD7 /* DropdownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516AC2C7C775500883DD7 /* DropdownTextField.swift */; };
+		0EC516AF2C7D434600883DD7 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516AE2C7D434600883DD7 /* View+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		0E3A46852C7C4D2400745074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E3A46882C7C4D2400745074 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0EC516A92C7C50BC00883DD7 /* NewDiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDiaryEntryView.swift; sourceTree = "<group>"; };
+		0EC516AC2C7C775500883DD7 /* DropdownTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownTextField.swift; sourceTree = "<group>"; };
+		0EC516AE2C7D434600883DD7 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 		0EC516A52C7C4FA800883DD7 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				0EC516AB2C7C770300883DD7 /* UIComponents */,
 				0EC516A82C7C507D00883DD7 /* New Diary */,
 				0E3A46812C7C4D2200745074 /* SiteDiaryApp.swift */,
 			);
@@ -97,6 +102,15 @@
 				0EC516A92C7C50BC00883DD7 /* NewDiaryEntryView.swift */,
 			);
 			path = "New Diary";
+			sourceTree = "<group>";
+		};
+		0EC516AB2C7C770300883DD7 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				0EC516AC2C7C775500883DD7 /* DropdownTextField.swift */,
+				0EC516AE2C7D434600883DD7 /* View+Extensions.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +185,8 @@
 			files = (
 				0E3A46822C7C4D2200745074 /* SiteDiaryApp.swift in Sources */,
 				0EC516AA2C7C50BC00883DD7 /* NewDiaryEntryView.swift in Sources */,
+				0EC516AF2C7D434600883DD7 /* View+Extensions.swift in Sources */,
+				0EC516AD2C7C775500883DD7 /* DropdownTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
