@@ -10,6 +10,8 @@ struct CheckboxToggleStyle: ToggleStyle {
                 configuration.label
                 Spacer()
                 Image(systemName: configuration.isOn ? "checkmark.square" : "square")
+                    .font(.subheadline)
+                    .fontWeight(.bold)
                     .tint(.green)
             }
         })

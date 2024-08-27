@@ -10,21 +10,25 @@ import PhotosUI
 
 struct NewDiaryEntryView: View {
 
+    // MARK: - Properties
+
+    @StateObject var viewModel = NewDiaryEntryViewModel()
+
     @State private var selectedPhotoItems = [PhotosPickerItem]()
     @State private var selectedImages = [Image]()
 
     @State private var commentsInput: String = ""
     @State private var tagsInput: String = ""
 
-    var listOfAreas: [String]  = ["Area #1", "Area #2", "Area #3"]
-    @State var selectedArea = ""
+    @State private var selectedAreaInput = ""
+    @State private var selectedTaskCategoryInput = ""
 
-    var listOfTaskCategory: [String]  = ["Task A", "Task B", "Task C"]
-    @State var selectedTaskCategory = ""
+    @State private var linkToExistingEvent = false
+    @State private var selectedEventInput = ""
 
-    @State var linkToExistingEvent = false
-    var listOfEvents: [String]  = ["Event 1", "Event 2", "Event 3"]
-    @State var selectedEvent = ""
+    @FocusState private var isEditing: Bool
+
+    // MARK: - UI Body
 
     var body: some View {
         NavigationStack {
@@ -114,7 +118,7 @@ private extension NewDiaryEntryView {
 
     var mainHeader: some View {
         HStack {
-            Text("Add to site diary")
+            Text(viewModel.headerTitle)
                 .font(.title2)
                 .fontWeight(.semibold)
 
@@ -131,7 +135,7 @@ private extension NewDiaryEntryView {
         GroupBox {
             VStack(alignment: .leading, spacing: 20) {
 
-                groupHeader(title: "Add photos to site diary")
+                groupHeader(title: viewModel.photosSectionHeaderTitle)
 
                 Divider()
 
@@ -151,7 +155,7 @@ private extension NewDiaryEntryView {
                     matching: .images,
                     preferredItemEncoding: .compatible
                 ) {
-                    Text("Add a photo")
+                    Text(viewModel.addPhotoButtonTitle)
                         .primaryButtonStyle()
                 }
             }
@@ -162,12 +166,13 @@ private extension NewDiaryEntryView {
         GroupBox {
             VStack(alignment: .leading, spacing: 20) {
 
-                groupHeader(title: "Comments")
+                groupHeader(title: viewModel.commentSectionTitle)
 
                 Divider()
 
-                TextField("Comments", text: $commentsInput)
+                TextField(viewModel.commentSectionTitle, text: $commentsInput)
                     .underlined()
+                    .focused($isEditing)
             }
         }
     }
@@ -176,23 +181,26 @@ private extension NewDiaryEntryView {
         GroupBox {
             VStack(alignment: .leading, spacing: 20) {
 
-                groupHeader(title: "Details")
+                groupHeader(title: viewModel.detailsSectionTitle)
 
                 Divider()
 
                 DropdownTextField(
-                    title: "Select Area",
-                    dropdownInputs: listOfAreas,
-                    inputText: $selectedArea)
+                    title: viewModel.selectAreaTitle,
+                    dropdownInputs: viewModel.listOfAreas,
+                    inputText: $selectedAreaInput)
+                .focused($isEditing)
 
 
                 DropdownTextField(
-                    title: "Task Category",
-                    dropdownInputs: listOfTaskCategory,
-                    inputText: $selectedTaskCategory)
+                    title: viewModel.taskCategoryTitle,
+                    dropdownInputs: viewModel.listOfTaskCategory,
+                    inputText: $selectedTaskCategoryInput)
+                .focused($isEditing)
 
-                TextField("Tags", text: $tagsInput)
+                TextField(viewModel.tagsTitle, text: $tagsInput)
                     .underlined()
+                    .focused($isEditing)
             }
         }
     }
@@ -201,16 +209,17 @@ private extension NewDiaryEntryView {
         GroupBox {
             VStack(alignment: .leading, spacing: 20) {
                 Toggle(isOn: $linkToExistingEvent) {
-                    groupHeader(title: "Link to existing event?")
+                    groupHeader(title: viewModel.linkToEventTitle)
                         .tint(.primary)
                 }
                 .toggleStyle(CheckboxToggleStyle())
 
                 if linkToExistingEvent {
                     DropdownTextField(
-                        title: "Select an event",
-                        dropdownInputs: listOfEvents,
-                        inputText: $selectedEvent)
+                        title: viewModel.selectEventTitle,
+                        dropdownInputs: viewModel.listOfEvents,
+                        inputText: $selectedEventInput)
+                    .focused($isEditing)
                 }
             }
         }
@@ -222,7 +231,6 @@ private extension NewDiaryEntryView {
             print("Next pressed!")
         }
         .buttonStyle(PrimaryButtonStyle())
-
     }
 }
 
@@ -234,6 +242,18 @@ private extension NewDiaryEntryView {
         Text(title)
             .font(.subheadline)
             .fontWeight(.semibold)
+    }
+
+    func clearFormInputs() {
+        isEditing = false
+
+        selectedImages.removeAll()
+        commentsInput = ""
+        tagsInput = ""
+        selectedAreaInput = ""
+        selectedTaskCategoryInput = ""
+        linkToExistingEvent = false
+        selectedEventInput = ""
     }
 }
 
