@@ -6,11 +6,11 @@ class NewDiaryEntryViewModel: ObservableObject {
 
     // MARK: - Types
 
-    enum ViewState {
+    enum ViewState: Equatable {
         case idle
         case loading
         case success
-        case error
+        case failure(NetworkError)
     }
 
     @Published var state: ViewState = .idle
@@ -94,7 +94,6 @@ class NewDiaryEntryViewModel: ObservableObject {
             linkedEvent: linkedEvent
         )
 
-        // 1. Mark loading state
         state = .loading
 
         Task {
@@ -102,7 +101,7 @@ class NewDiaryEntryViewModel: ObservableObject {
                 try await useCase.saveDiaryItem(newItem)
                 state = .success
             } catch {
-                state = .error
+                state = .failure(error as? NetworkError ?? .unknown)
             }
         }
     }

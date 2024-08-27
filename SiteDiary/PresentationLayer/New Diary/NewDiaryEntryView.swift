@@ -28,7 +28,10 @@ struct NewDiaryEntryView: View {
 
     @FocusState private var isEditing: Bool
 
-    @State private var showingSuccessHUD = false
+    @State private var isShowingSuccessHUD = false
+
+    @State private var isShowingErrorAlert = false
+    @State private var shownError: NetworkError?
 
     // MARK: - UI Body
 
@@ -59,7 +62,7 @@ struct NewDiaryEntryView: View {
                     fullScreenProgressView
                 }
 
-                if showingSuccessHUD {
+                if isShowingSuccessHUD {
                     successHUDView
                 }
             }
@@ -68,6 +71,9 @@ struct NewDiaryEntryView: View {
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
             .background(Color.gray.opacity(0.3))
+        }
+        .alert(isPresented: $isShowingErrorAlert) {
+            errorAlert(from: shownError)
         }
         .onChange(of: selectedPhotoItems) {
             Task {
@@ -81,11 +87,14 @@ struct NewDiaryEntryView: View {
             }
         }
         .onChange(of: viewModel.state) { _, state in
-            if state == .success {
+            if case .success = state {
                 clearFormInputs()
                 withAnimation {
-                    showingSuccessHUD = true
+                    isShowingSuccessHUD = true
                 }
+            } else if case .failure(let error) = state {
+                isShowingErrorAlert = true
+                shownError = error
             }
         }
     }
@@ -136,6 +145,7 @@ private extension NewDiaryEntryView {
 
 private extension NewDiaryEntryView {
 
+    @ViewBuilder
     var mainHeader: some View {
         HStack {
             Text(viewModel.headerTitle)
@@ -151,6 +161,7 @@ private extension NewDiaryEntryView {
         .foregroundColor(.primary.opacity(0.6))
     }
 
+    @ViewBuilder
     var photosSection: some View {
         GroupBox {
             VStack(alignment: .leading, spacing: 20) {
@@ -182,6 +193,7 @@ private extension NewDiaryEntryView {
         }
     }
 
+    @ViewBuilder
     var commentsSection: some View {
         GroupBox {
             VStack(alignment: .leading, spacing: 20) {
@@ -197,6 +209,7 @@ private extension NewDiaryEntryView {
         }
     }
 
+    @ViewBuilder
     var detailsSection: some View {
         GroupBox {
             VStack(alignment: .leading, spacing: 20) {
@@ -225,6 +238,7 @@ private extension NewDiaryEntryView {
         }
     }
 
+    @ViewBuilder
     var linkToEventSection: some View {
         GroupBox {
             VStack(alignment: .leading, spacing: 20) {
@@ -245,8 +259,11 @@ private extension NewDiaryEntryView {
         }
     }
 
+    @ViewBuilder
     var nextButton: some View {
         Button(viewModel.saveButtonTitle) {
+            clearErrorAlert()
+
             viewModel.saveDiaryItem(
                 from: selectedImages,
                 comments: commentsInput,
@@ -259,6 +276,7 @@ private extension NewDiaryEntryView {
         .buttonStyle(PrimaryButtonStyle())
     }
 
+    @ViewBuilder
     var fullScreenProgressView: some View {
         ProgressView()
             .progressViewStyle(CircularProgressViewStyle(tint: .black))
@@ -272,6 +290,7 @@ private extension NewDiaryEntryView {
             .background(Color.gray.opacity(0.5))
     }
 
+    @ViewBuilder
     var successHUDView: some View {
         HUDView {
             Label(viewModel.savedToDiaryTitle, systemImage: "checkmark.icloud")
@@ -281,7 +300,7 @@ private extension NewDiaryEntryView {
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 withAnimation {
-                  showingSuccessHUD = false
+                  isShowingSuccessHUD = false
                 }
             }
         }
@@ -292,10 +311,19 @@ private extension NewDiaryEntryView {
 
 private extension NewDiaryEntryView {
 
+    @ViewBuilder
     func groupHeader(title: String) -> some View {
         Text(title)
             .font(.subheadline)
             .fontWeight(.semibold)
+    }
+
+    func errorAlert(from error: NetworkError?) -> Alert {
+        Alert(
+            title: Text(error?.title ?? ""),
+            message: Text(error?.message ?? ""),
+            dismissButton: .default(Text("OK"))
+        )
     }
 
     func clearFormInputs() {
@@ -308,6 +336,11 @@ private extension NewDiaryEntryView {
         selectedTaskCategoryInput = ""
         linkToExistingEvent = false
         selectedEventInput = ""
+    }
+
+    func clearErrorAlert() {
+        isShowingErrorAlert = false
+        shownError = nil
     }
 }
 
