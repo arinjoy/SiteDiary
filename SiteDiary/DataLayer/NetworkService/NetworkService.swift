@@ -1,6 +1,9 @@
 import Foundation
 import Combine
 
+// TODO: Extract these content of the `DataLayer` folder as SPM local module
+// Hence many things declared public to access across package boundary
+
 final public class NetworkService: NetworkServiceType {
 
     private let session: URLSession

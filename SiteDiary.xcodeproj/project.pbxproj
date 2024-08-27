@@ -27,6 +27,8 @@
 		0EC516C92C7D956700883DD7 /* ServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516C82C7D956700883DD7 /* ServicesProvider.swift */; };
 		0EC516CD2C7D96AC00883DD7 /* DiraryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516CC2C7D96AC00883DD7 /* DiraryEntry.swift */; };
 		0EC516CF2C7D98B900883DD7 /* Resource+DiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516CE2C7D98B900883DD7 /* Resource+DiaryEntry.swift */; };
+		0EC516D12C7D9D9F00883DD7 /* DiaryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516D02C7D9D9F00883DD7 /* DiaryUseCase.swift */; };
+		0EC516D32C7D9DB800883DD7 /* DiaryUseCaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516D22C7D9DB800883DD7 /* DiaryUseCaseType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		0EC516C82C7D956700883DD7 /* ServicesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesProvider.swift; sourceTree = "<group>"; };
 		0EC516CC2C7D96AC00883DD7 /* DiraryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiraryEntry.swift; sourceTree = "<group>"; };
 		0EC516CE2C7D98B900883DD7 /* Resource+DiaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resource+DiaryEntry.swift"; sourceTree = "<group>"; };
+		0EC516D02C7D9D9F00883DD7 /* DiaryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryUseCase.swift; sourceTree = "<group>"; };
+		0EC516D22C7D9DB800883DD7 /* DiaryUseCaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryUseCaseType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 		0EC516A72C7C4FF400883DD7 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
+				0EC516D22C7D9DB800883DD7 /* DiaryUseCaseType.swift */,
+				0EC516D02C7D9D9F00883DD7 /* DiaryUseCase.swift */,
 			);
 			path = DomainLayer;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 				0E3A46822C7C4D2200745074 /* SiteDiaryApp.swift in Sources */,
 				0EC516BC2C7D8D0000883DD7 /* Resource.swift in Sources */,
 				0EC516B12C7D534E00883DD7 /* CheckboxToggleStyle.swift in Sources */,
+				0EC516D32C7D9DB800883DD7 /* DiaryUseCaseType.swift in Sources */,
 				0EC516C42C7D8DCD00883DD7 /* Scheduler+Extensions.swift in Sources */,
 				0EC516C32C7D8DCD00883DD7 /* AnyPublisher+Extensions.swift in Sources */,
 				0EC516BB2C7D8D0000883DD7 /* NetworkService.swift in Sources */,
@@ -274,6 +281,7 @@
 				0EC516C72C7D947000883DD7 /* APIConstants.swift in Sources */,
 				0EC516B72C7D796100883DD7 /* HUDView.swift in Sources */,
 				0EC516AF2C7D434600883DD7 /* View+Extensions.swift in Sources */,
+				0EC516D12C7D9D9F00883DD7 /* DiaryUseCase.swift in Sources */,
 				0EC516AD2C7C775500883DD7 /* DropdownTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

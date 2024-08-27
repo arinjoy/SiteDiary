@@ -1,6 +1,9 @@
 import Foundation
 
+@MainActor
 class NewDiaryEntryViewModel: ObservableObject {
+
+    // MARK: - Types
 
     enum ViewState {
         case idle
@@ -10,6 +13,18 @@ class NewDiaryEntryViewModel: ObservableObject {
     }
 
     @Published var state: ViewState = .idle
+
+    // MARK: - Private Dependency
+
+    private let useCase: DiaryUseCaseType
+
+    // MARK: - Initializer
+
+    init(useCase: DiaryUseCaseType = DiaryUseCase()) {
+        self.useCase = useCase
+    }
+
+    // MARK: - View helper properties
 
     // TODO: - Ideally these copies should move into localized strings files
     // SwiftGen can be used to access the copies in typeSafe enums ways.
@@ -58,10 +73,17 @@ class NewDiaryEntryViewModel: ObservableObject {
 
     func saveDiaryEntry() {
 
+        let newDiaryEntry = DiaryEntry(comments: "Hello", areaName: "some", taskName: "task", tags: ["aa", "bb"], existingEventName: "some", timestamp: Date.now)
+
         state = .loading
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-            self.state = .success
+        Task {
+            do {
+                try await useCase.saveDiaryEntry(newDiaryEntry)
+                state = .success
+            } catch {
+                state = .error
+            }
         }
     }
 
