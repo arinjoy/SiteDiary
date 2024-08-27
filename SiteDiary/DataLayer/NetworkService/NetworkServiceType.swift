@@ -4,7 +4,7 @@ import Combine
 public protocol NetworkServiceType: AnyObject {
 
     @discardableResult
-    func save<E: Encodable, D: Decodable>(_ resource: Resource<E, D>) -> AnyPublisher<D, NetworkError>
+    func save<T: Codable>(_ resource: Resource<T>) -> AnyPublisher<T, NetworkError>
 }
 
 /// Defines the Network service errors.

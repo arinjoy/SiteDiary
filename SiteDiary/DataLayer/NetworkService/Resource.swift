@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Resource<E: Encodable, D: Decodable> {
+public struct Resource<T: Codable> {
 
     // MARK: - Properties
 

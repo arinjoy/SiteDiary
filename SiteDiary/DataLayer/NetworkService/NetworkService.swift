@@ -11,7 +11,7 @@ final public class NetworkService: NetworkServiceType {
 
     // MARK: - NetworkServiceType
 
-    public func save<E, D>(_ resource: Resource<E, D>) -> AnyPublisher<D, NetworkError> where E: Encodable, D: Decodable {
+    public func save<T>(_ resource: Resource<T>) -> AnyPublisher<T, NetworkError> where T: Codable {
 
         guard var request = resource.request else {
             return .fail(NetworkError.unknown)
@@ -34,7 +34,7 @@ final public class NetworkService: NetworkServiceType {
                     throw NetworkError.noDataFound
                 }
 
-                // 3. If data exists, then check for negative/faliure HTTP status code
+                // 3. If data exists, then check for negative/failure HTTP status code
                 // and map them to custom errors for potential custom handling
                 guard 200..<300 ~= response.statusCode else {
                     throw self.mapHTTPStatusError(statusCode: response.statusCode)
@@ -44,12 +44,12 @@ final public class NetworkService: NetworkServiceType {
                 // decoded as JSON as next step
                 return data
             }
-            .decode(type: D.self, decoder: JSONDecoder())
+            .decode(type: T.self, decoder: JSONDecoder())
             .map {
                 // 5. JSON decoding is successful and return decoded entity/model
                 return $0
             }
-            .catch { error -> AnyPublisher<D, NetworkError> in
+            .catch { error -> AnyPublisher<T, NetworkError> in
 
                 // 6. If JSON decoding fails, from decode above (i.e. error came as non NetworkError)
                 // return decoding error
