@@ -28,11 +28,12 @@ struct NewDiaryEntryView: View {
 
     @FocusState private var isEditing: Bool
 
+    @State private var showingSuccessHUD = false
+
     // MARK: - UI Body
 
     var body: some View {
         NavigationStack {
-
             ZStack {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 20) {
@@ -57,6 +58,10 @@ struct NewDiaryEntryView: View {
                 if viewModel.state == .loading {
                     fullScreenProgressView
                 }
+
+                if showingSuccessHUD {
+                    successHUDView
+                }
             }
             .toolbar { navBarContent }
             .toolbarBackground(Color.black, for: .navigationBar)
@@ -78,6 +83,9 @@ struct NewDiaryEntryView: View {
         .onChange(of: viewModel.state) { _, state in
             if state == .success {
                 clearFormInputs()
+                withAnimation {
+                    showingSuccessHUD = true
+                }
             }
         }
     }
@@ -255,6 +263,21 @@ private extension NewDiaryEntryView {
             )
             .ignoresSafeArea()
             .background(Color.gray.opacity(0.5))
+    }
+
+    var successHUDView: some View {
+        HUDView {
+          Label("Diary Saved!", systemImage: "checkmark.icloud")
+        }
+        .zIndex(1)
+        .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
+        .onAppear {
+          DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            withAnimation {
+              showingSuccessHUD = false
+            }
+          }
+        }
     }
 }
 

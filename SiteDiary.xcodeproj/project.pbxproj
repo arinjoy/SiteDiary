@@ -16,6 +16,7 @@
 		0EC516B12C7D534E00883DD7 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516B02C7D534E00883DD7 /* CheckboxToggleStyle.swift */; };
 		0EC516B32C7D5C5200883DD7 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516B22C7D5C5200883DD7 /* PrimaryButtonStyle.swift */; };
 		0EC516B52C7D618800883DD7 /* NewDiaryEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516B42C7D618800883DD7 /* NewDiaryEntryViewModel.swift */; };
+		0EC516B72C7D796100883DD7 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC516B62C7D796100883DD7 /* HUDView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		0EC516B02C7D534E00883DD7 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 		0EC516B22C7D5C5200883DD7 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		0EC516B42C7D618800883DD7 /* NewDiaryEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDiaryEntryViewModel.swift; sourceTree = "<group>"; };
+		0EC516B62C7D796100883DD7 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				0EC516AE2C7D434600883DD7 /* View+Extensions.swift */,
 				0EC516B02C7D534E00883DD7 /* CheckboxToggleStyle.swift */,
 				0EC516B22C7D5C5200883DD7 /* PrimaryButtonStyle.swift */,
+				0EC516B62C7D796100883DD7 /* HUDView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				0E3A46822C7C4D2200745074 /* SiteDiaryApp.swift in Sources */,
 				0EC516B12C7D534E00883DD7 /* CheckboxToggleStyle.swift in Sources */,
 				0EC516AA2C7C50BC00883DD7 /* NewDiaryEntryView.swift in Sources */,
+				0EC516B72C7D796100883DD7 /* HUDView.swift in Sources */,
 				0EC516AF2C7D434600883DD7 /* View+Extensions.swift in Sources */,
 				0EC516AD2C7C775500883DD7 /* DropdownTextField.swift in Sources */,
 			);
