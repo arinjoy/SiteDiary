@@ -80,3 +80,6 @@ Please refer from the project navigator in Xcode to see the layering.
 - `NetworkFailure` (i.e. internet disconnected) shows its custom message
 - All other server errors have a generic message
 
+| Generic Server Error | Internet Offline Error |
+| ------ | ------ |
+|  <img src="Screenshots/screen6.png" width="220" alt=""> | <img src="Screenshots/screen7.png" width="220" alt="">  |
