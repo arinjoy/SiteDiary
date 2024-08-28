@@ -8,15 +8,21 @@ import DomainLayer
 @MainActor
 class NewDiaryEntryViewModel: ObservableObject {
 
+    // MARK: - Types
+
     enum ViewState: Equatable {
         case idle
-        case invalidInput
         case loading
         case success
-        case failure(NetworkError)
+        case failure(FailureReason)
     }
 
-    @Published var state: ViewState = .idle
+    enum FailureReason: Equatable {
+        case invalidInput
+        case networkIssue(NetworkError)
+    }
+
+    @Published private(set) var state: ViewState = .idle
 
     // MARK: - Private Dependency
 
@@ -101,7 +107,7 @@ class NewDiaryEntryViewModel: ObservableObject {
             area.isEmpty == false,
             task.isEmpty == false
         else {
-            state = .invalidInput
+            state = .failure(.invalidInput)
             return
         }
 
@@ -127,7 +133,7 @@ class NewDiaryEntryViewModel: ObservableObject {
             .delay(for: .seconds(0.5), scheduler: Scheduler.main)
             .sink { [unowned self] completion in
                 if case .failure(let error) = completion {
-                    state = .failure(error)
+                    state = .failure(.networkIssue(error))
                 }
             } receiveValue: { [unowned self] _ in
                 state = .success

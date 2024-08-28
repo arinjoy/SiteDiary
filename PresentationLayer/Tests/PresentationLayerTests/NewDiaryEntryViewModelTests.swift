@@ -55,7 +55,7 @@ final class NewDiaryEntryViewModelTests: XCTestCase {
         waitForExpectations(timeout: 1.0, handler: nil)
 
         // THEN - viewModel's state should become `invalidInput`
-        XCTAssertEqual(testSubject.state, .invalidInput)
+        XCTAssertEqual(testSubject.state, .failure(.invalidInput))
     }
 
     func testSavingTriggersLoadingState() {
@@ -131,13 +131,27 @@ final class NewDiaryEntryViewModelTests: XCTestCase {
 
         // THEN - viewModel's state should become `failure`
         switch testSubject.state {
-        case .failure(let error):
+        case .failure(let reason):
             // AND - retuned associated error is same as returned by useCase
-            XCTAssertEqual(error, .networkFailure)
+            XCTAssertEqual(reason, .networkIssue(.networkFailure))
         default:
             XCTFail("Loading state must become `failure`")
         }
     }
 
+    // MARK: - Test copies / strings
+
+    func testCopies() {
+        XCTAssertEqual(testSubject.headerTitle, "Add to site diary")
+        XCTAssertEqual(testSubject.photosSectionHeaderTitle, "Add photos to site diary")
+        XCTAssertEqual(testSubject.commentSectionTitle, "Comments")
+        XCTAssertEqual(testSubject.detailsSectionTitle, "Details")
+        XCTAssertEqual(testSubject.addPhotoButtonTitle, "Add a photo")
+
+        // TODO: Finish the rest of the tests for other copies
+        // These tests are useful if string copies get updated in the centralised
+        // `.strings` files. If viewModel reads from there, then unit tests can catch
+        // any inadvertent or mistaken copy update
+    }
 
 }

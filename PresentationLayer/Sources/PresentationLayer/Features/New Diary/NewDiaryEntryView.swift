@@ -25,9 +25,7 @@ struct NewDiaryEntryView: View {
     @State private var isShowingSuccessHUD = false
 
     @State private var isShowingErrorAlert = false
-    @State private var shownError: NetworkError?
-
-    @State private var isShowingValidationAlert = false
+    @State private var shownErrorReason: NewDiaryEntryViewModel.FailureReason?
 
     // MARK: - UI Body
 
@@ -85,22 +83,13 @@ struct NewDiaryEntryView: View {
                 withAnimation {
                     isShowingSuccessHUD = true
                 }
-            } else if case .failure(let error) = state {
+            } else if case .failure(let reason) = state {
                 isShowingErrorAlert = true
-                shownError = error
-            } else if case .invalidInput = state {
-                isShowingValidationAlert = true
+                shownErrorReason = reason
             }
         }
         .alert(isPresented: $isShowingErrorAlert) {
-            errorAlert(from: shownError)
-        }
-        .alert(isPresented: $isShowingValidationAlert) {
-            Alert(
-                title: Text(viewModel.invalidInputErrorTitle),
-                message: Text(viewModel.invalidInputErrorMessage),
-                dismissButton: .default(Text("OK"))
-            )
+            errorAlert()
         }
     }
 }
@@ -322,10 +311,24 @@ private extension NewDiaryEntryView {
             .fontWeight(.semibold)
     }
 
-    func errorAlert(from error: NetworkError?) -> Alert {
-        Alert(
-            title: Text(error?.title ?? ""),
-            message: Text(error?.message ?? ""),
+    func errorAlert() -> Alert {
+        var title: String = ""
+        var message: String = ""
+        
+        if let errorReason = shownErrorReason {
+            switch errorReason {
+            case .invalidInput:
+                title = viewModel.invalidInputErrorTitle
+                message = viewModel.invalidInputErrorMessage
+            case .networkIssue(let error):
+                title = error.title
+                message = error.message
+            }
+        }
+
+        return Alert(
+            title: Text(title),
+            message: Text(message),
             dismissButton: .default(Text("OK"))
         )
     }
@@ -344,8 +347,7 @@ private extension NewDiaryEntryView {
 
     func clearErrorAlert() {
         isShowingErrorAlert = false
-        isShowingValidationAlert = false
-        shownError = nil
+        shownErrorReason = nil
     }
 }
 
