@@ -94,7 +94,7 @@ class NewDiaryEntryViewModel: ObservableObject {
 
         // Note: Modify these logic as per..
         // business requirements of form input validation.
-        // Currently, some simple check applied.
+        // Currently, some simple checks applied.
         guard
             images.count > 0,
             comments.isEmpty == false,
@@ -129,7 +129,7 @@ class NewDiaryEntryViewModel: ObservableObject {
                 if case .failure(let error) = completion {
                     state = .failure(error)
                 }
-            } receiveValue: { [unowned self] complete in
+            } receiveValue: { [unowned self] _ in
                 state = .success
             }
             .store(in: &cancellables)
